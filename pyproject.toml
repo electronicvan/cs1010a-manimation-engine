@@ -1,0 +1,25 @@
+[project]
+name = "cs1010a-manimation-engine"
+version = "0.1.0"
+description = "Animate code walkthroughs in Manim from CSV scripts"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "electronicvan" }]
+requires-python = ">=3.11"
+dependencies = [
+    "manim>=0.22.1,<0.23",
+    "pyyaml>=6.0.3",
+]
+
+[project.scripts]
+manimation = "cs1010a_manimation_engine.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.8.14,<0.9.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]

@@ -1,0 +1,51 @@
+# Built-in themes for cs1010a-manimation-engine.
+#
+# Pick one at the top of a CSV with `# theme: <name>`, then override any key
+# for that video only with more `# key: value` lines, e.g.
+#
+#   # theme: terminal
+#   # width: 1300
+#   # height: 600
+#   # bg-color: black
+#   # syntax.keyword: #ff7700
+#   Rel,Time,Type,Line,Content,Duration,Effect
+#
+# Colours are hex strings (quote them here — an unquoted # starts a YAML
+# comment) or Manim colour names (yellow, white, ...).
+# width/height are optional: the terminal window's size in pixels at 1080p
+# (frame = 1920x1080). The window is centred and the video resolution still
+# follows -q, so -qh/-qk render the same layout at full quality. Without them
+# the window fills the frame.
+
+default: terminal   # used when a CSV has no `# theme:` line
+
+themes:
+  terminal:
+    font: Martian Mono
+    font-size: 24
+    line-height: 0.6        # scene units between lines
+    indent-width: 1.0       # scene units per 4-space indent
+    bg-color: "#11111b"     # outside the window
+    text-color: "#ffffff"
+    highlight-color: "#FFFF00"   # pure yellow (Manim 0.22 changed its YELLOW to #F7D96F)
+    window: true            # draw the terminal-window chrome
+    window-color: "#1e1e2e" # window body
+    border-color: "#45475a" # window outline + divider
+    syntax:
+      keyword: "#cba6f7"    # mauve — if, else, for, return, ...
+      bool: "#fab387"       # peach — True / False / None
+      defname: "#89b4fa"    # blue  — names after def / class
+
+  idle:                     # Python IDLE default colours, no window
+    font: Martian Mono
+    font-size: 24
+    line-height: 0.6
+    indent-width: 1.0
+    bg-color: "#ffffff"
+    text-color: "#000000"
+    highlight-color: "#FFFF00"   # pure yellow (Manim 0.22 changed its YELLOW to #F7D96F)
+    window: false
+    syntax:
+      keyword: "#ff7700"
+      bool: "#ff7700"
+      defname: "#0000ff"

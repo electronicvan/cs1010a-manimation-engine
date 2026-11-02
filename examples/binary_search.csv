@@ -1,0 +1,22 @@
+# theme: terminal
+Rel,Time,Type,Line,Content,Duration,Effect
+,,Append,,"def binary_search(key, seq):"
++,1,Append,,    mid = len(seq) // 2
++,1,Append,,    if key == seq[mid]:
++,1,Append,,        return True
++,1,Highlight,2,seq[mid]
++,1,FadeOut,,,0.5
++,0,Insert,1,    if seq == []:
++,1,Insert,2,        return False
++,1,Append,,    elif key < seq[mid]:
++,1,Append,,"        return binary_search(key, seq[:mid])"
++,1,Append,,    else:
++,1,Append,,"        return binary_search(key, seq[mid+1:])"
++,1,Highlight,7,seq[:mid],,temporary
++,1,Highlight,9,seq[mid+1:],,temporary
++,1,FadeOut,,,0.5
++,1,Replace,7,"seq[:mid] -> low, mid - 1"
+&,0,Replace,9,"seq[mid+1:] -> mid + 1, high"
++,1,Replace,0,"(key, seq) -> (key, low, high)",,transform
++,1,Replace,1,seq == [] -> low > high
++,1,Replace,3,len(seq) // 2 -> (low + high) // 2

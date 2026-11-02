@@ -1,0 +1,30 @@
+# theme: terminal
+# width: 1300
+# height: 600
+# bg-color: black
+# text-color: white
+Rel,Time,Type,Line,Content,Duration,Effect
+,,Append,,def total(xs: list) -> int:
++,0.5,Append,,    acc = 0
++,0.5,Append,,    for x in xs:
++,0.5,Append,,        acc = acc + x
++,0.5,Append,,    return acc
++,0.5,Append,,
++,0.5,Append,,def mean(xs: list) -> int:
++,0.5,Append,,    if xs == []:
++,0.5,Append,,        return None
++,0.5,Append,,    return total(xs) // len(xs)
++,0.5,Append,,
++,0.5,Append,,"print(mean([1, 2, 3]))"
++,1,Highlight,0,-> int,,temporary
++,1,Replace,0,\-> int -> \-> float
++,1,Replace,*,mean -> avg
++,1,Highlight,*,xs,,#89dceb
++,1,FadeOut,,,0.5
++,1,Insert,2,    # running sum
++,1,Replace,4,acc -> total
++,1,Replace,10,\s//\s -> \s/\s
++,1,Replace,*,xs -> nums,,transform
++,1,Pulse,0,def,2
++,1,Replace,1,'acc = 0' -> 'acc = 0.0',,transform
++,1,Append,,# done
